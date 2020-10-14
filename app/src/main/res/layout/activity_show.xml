@@ -19,7 +19,7 @@
         android:layout_marginBottom="20dp"
         android:text="Login"
         android:textColor="#FCFDFD"
-        android:textSize="24sp" />
+        android:textSize="24sp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDoctor"
@@ -41,7 +41,9 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/docor" />
+                app:srcCompat="@drawable/docor"
+                android:id="@+id/logDoctor"
+                android:clickable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,14 +75,16 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/docor" />
+                app:srcCompat="@drawable/docor"
+                android:id="@+id/logUser"
+                android:clickable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="As a User"
-                android:textColor="#222" />
+                android:textColor="#222"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -104,7 +108,9 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/docor" />
+                app:srcCompat="@drawable/docor"
+                android:id="@+id/logAdmin"
+                android:clickable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -122,5 +128,6 @@
         android:text="Don't have any acount?"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:clickable="true"/>
 </RelativeLayout>
