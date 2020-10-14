@@ -22,7 +22,7 @@ public class RegShowActivity extends AppCompatActivity {
         doctorbutton=findViewById(R.id.regDoctorId);
         userbutton=findViewById(R.id.Userid);
 
-        doctorbutton.setOnClickListener(new View.OnClickListener() {
+        userbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegShowActivity.this,RegisterDoctor.class);
@@ -30,7 +30,7 @@ public class RegShowActivity extends AppCompatActivity {
             }
         });
 
-        userbutton.setOnClickListener(new View.OnClickListener() {
+        doctorbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegShowActivity.this, RegisterActivity.class);

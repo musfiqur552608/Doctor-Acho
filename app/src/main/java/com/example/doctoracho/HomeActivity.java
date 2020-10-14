@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    /*@Override
+    @Override
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser =  mAuth.getCurrentUser();
@@ -39,7 +39,8 @@ public class HomeActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-    }*/
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if(item.getItemId()==R.id.logoutId){
+                mAuth.signOut();
+                SendUserToLoginActivity();
 
         }
 
