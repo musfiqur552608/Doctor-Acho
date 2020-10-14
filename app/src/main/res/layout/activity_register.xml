@@ -131,6 +131,6 @@
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:text="I have an account!!!"
-        android:textColor="#222"
+        android:textColor="#EFEFEF"
         android:clickable="true"/>
 </RelativeLayout>
