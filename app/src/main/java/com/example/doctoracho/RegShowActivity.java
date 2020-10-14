@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class RegShowActivity extends AppCompatActivity {
 
     private ImageButton doctorbutton,userbutton;
+    private TextView textView;
 
 
 
@@ -21,6 +23,7 @@ public class RegShowActivity extends AppCompatActivity {
 
         doctorbutton=findViewById(R.id.regDoctorId);
         userbutton=findViewById(R.id.Userid);
+        textView=findViewById(R.id.regBtn2);
 
         userbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +41,14 @@ public class RegShowActivity extends AppCompatActivity {
             }
         });
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegShowActivity.this,ShowActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 }
