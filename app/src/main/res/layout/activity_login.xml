@@ -80,7 +80,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/registerBtn"
+        android:id="@+id/regBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have any account?"

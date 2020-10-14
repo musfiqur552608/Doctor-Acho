@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "249255869149",
+    "firebase_url": "https://doctoracho-4ee88.firebaseio.com",
+    "project_id": "doctoracho-4ee88",
+    "storage_bucket": "doctoracho-4ee88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249255869149:android:ca2cd25dd8605bb9433934",
+        "android_client_info": {
+          "package_name": "com.example.doctoracho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249255869149-jn05hhis50m8eg14nr4gvab5437p47vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXuPhDeUmGj9_CX5LEBhpLXkdFY02ILWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249255869149-jn05hhis50m8eg14nr4gvab5437p47vk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

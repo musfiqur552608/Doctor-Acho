@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class RegisterActivity extends AppCompatActivity {
 
     private Button button;
-    private TextView textView;
+    private TextView textView1;
     private EditText regpass, regconpass, regmail, regName, regGender, regAge;
 
     @Override
@@ -21,7 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         button = findViewById(R.id.regidterBtn);
-        textView = findViewById(R.id.haveBtn);
+        textView1 = findViewById(R.id.haveBtn);
         regAge  = findViewById(R.id.registerAge);
         regpass = findViewById(R.id.registerPass);
         regconpass = findViewById(R.id.registerConPass);
@@ -29,10 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
         regName = findViewById(R.id.registerName);
         regGender= findViewById(R.id.registerGender);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this,ShowActivity.class);
                 startActivity(intent);
             }
         });
