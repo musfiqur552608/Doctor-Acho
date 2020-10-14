@@ -27,8 +27,8 @@
         android:shadowColor="@android:color/background_dark"
         android:shadowRadius="3"
         android:text="DOCTOR ACHO"
-        android:textColor="#070707"
         android:textSize="24sp"
+        android:textColor="#FCFDFD"
         android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
