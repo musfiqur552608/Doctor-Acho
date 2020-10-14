@@ -3,6 +3,7 @@ package com.example.doctoracho;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void SendUserToLoginActivity() {
-        Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+        Intent intent = new Intent(HomeActivity.this,ShowActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
