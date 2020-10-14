@@ -137,7 +137,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="Anesthetics,"
+                            android:text="Anesthetics"
                             android:textColor="#222"
                             android:textStyle="bold" />
                     </LinearLayout>
