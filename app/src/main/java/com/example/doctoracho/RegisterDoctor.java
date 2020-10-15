@@ -31,7 +31,7 @@ public class RegisterDoctor extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    String currentUserID;
+    private String currentUserID;
 
     private DatabaseReference databaseReference;
 
@@ -52,8 +52,8 @@ public class RegisterDoctor extends AppCompatActivity {
         empID = findViewById(R.id.employeeId);
 
         mAuth = FirebaseAuth.getInstance();
-        currentUserID = mAuth.getCurrentUser().getUid();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        //currentUserID = mAuth.getCurrentUser().getUid();
+        //databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -72,13 +72,13 @@ public class RegisterDoctor extends AppCompatActivity {
         });
     }
     private void CreateAccount() {
-        String empI = empID.getText().toString();
-        String email = regmail.getText().toString();
+        final String empI = empID.getText().toString();
+        final String email = regmail.getText().toString();
         String password = regpass.getText().toString();
         String confirmPass= regconpass.getText().toString();
-        String age= regAge.getText().toString();
-        String name= regName.getText().toString();
-        String gender= regGender.getText().toString();
+        final String age= regAge.getText().toString();
+        final String name= regName.getText().toString();
+        final String gender= regGender.getText().toString();
 
 
         //Validation of empty string
@@ -116,33 +116,43 @@ public class RegisterDoctor extends AppCompatActivity {
         }
         else
         {
-            HashMap userMap = new HashMap();
-            userMap.put("empI",empI);
-            userMap.put("email",email);
-            userMap.put("name",name);
-            userMap.put("age",age);
-            userMap.put("gender",gender);
-            databaseReference.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
-                @Override
-                public void onComplete(@NonNull Task task) {
-                    if(task.isSuccessful())
-                    {
-                        Toast.makeText(RegisterDoctor.this, " ", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        String message = task.getException().getMessage();
-                        Toast.makeText(RegisterDoctor.this, "Error:"+message, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+
+
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
+
                                 Toast.makeText(RegisterDoctor.this, "Your account is created successfully.....", Toast.LENGTH_SHORT).show();
+
+
+                                currentUserID = mAuth.getCurrentUser().getUid();
+                                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+
+                                HashMap userMap = new HashMap();
+                                userMap.put("empI",empI);
+                                userMap.put("email",email);
+                                userMap.put("name",name);
+                                userMap.put("age",age);
+                                userMap.put("gender",gender);
+                                databaseReference.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+                                    @Override
+                                    public void onComplete(@NonNull Task task) {
+                                        if(task.isSuccessful())
+                                        {
+
+                                            Toast.makeText(RegisterDoctor.this, " ", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else
+                                        {
+                                            String message = task.getException().getMessage();
+                                            Toast.makeText(RegisterDoctor.this, "Error:"+message, Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
                                 Intent intent = new Intent(RegisterDoctor.this,HomeActivity.class);
                                 startActivity(intent);
                                 finish();

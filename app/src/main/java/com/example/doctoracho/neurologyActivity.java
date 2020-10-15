@@ -20,6 +20,7 @@ public class neurologyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_neurology);
         recyclerView = findViewById(R.id.recview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
         FirebaseRecyclerOptions<modelNe> options =
                 new FirebaseRecyclerOptions.Builder<modelNe>()
