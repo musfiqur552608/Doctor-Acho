@@ -56,9 +56,9 @@
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
+                            android:clickable="true"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/docor"
-                            android:clickable="true"/>
+                            app:srcCompat="@drawable/neu" />
 
                         <TextView
                             android:id="@+id/textView3"
@@ -90,8 +90,8 @@
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor"
-                            android:clickable="true"/>
+                            android:clickable="true"
+                            app:srcCompat="@drawable/ca" />
 
                         <TextView
                             android:id="@+id/textView4"
@@ -132,8 +132,8 @@
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor"
-                            android:clickable="true"/>
+                            android:clickable="true"
+                            app:srcCompat="@drawable/an" />
 
                         <TextView
                             android:id="@+id/textView5"
@@ -165,8 +165,8 @@
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor"
-                            android:clickable="true"/>
+                            android:clickable="true"
+                            app:srcCompat="@drawable/ga" />
 
                         <TextView
                             android:id="@+id/textView6"
