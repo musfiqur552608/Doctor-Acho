@@ -17,6 +17,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterDoctor extends AppCompatActivity {
 
@@ -26,6 +30,11 @@ public class RegisterDoctor extends AppCompatActivity {
     private EditText regpass, regconpass, regmail, regName, regGender, regAge, empID ;
 
     private FirebaseAuth mAuth;
+
+    String currentUserID;
+
+    private DatabaseReference databaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,9 @@ public class RegisterDoctor extends AppCompatActivity {
         empID = findViewById(R.id.employeeId);
 
         mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +116,26 @@ public class RegisterDoctor extends AppCompatActivity {
         }
         else
         {
+            HashMap userMap = new HashMap();
+            userMap.put("empI",empI);
+            userMap.put("email",email);
+            userMap.put("name",name);
+            userMap.put("age",age);
+            userMap.put("gender",gender);
+            databaseReference.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener() {
+                @Override
+                public void onComplete(@NonNull Task task) {
+                    if(task.isSuccessful())
+                    {
+                        Toast.makeText(RegisterDoctor.this, " ", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        String message = task.getException().getMessage();
+                        Toast.makeText(RegisterDoctor.this, "Error:"+message, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -123,6 +155,10 @@ public class RegisterDoctor extends AppCompatActivity {
 
                         }
                     });
+
+
+
         }
     }
+
 }

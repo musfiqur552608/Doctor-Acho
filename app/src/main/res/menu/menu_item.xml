@@ -3,15 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Settings"
-        android:id="@+id/settingId"
-        app:showAsAction="never">
-    </item>
-
+        android:id="@+id/neId"
+        android:title="Neurology"
+        app:showAsAction="never"></item>
     <item
-        android:title="Logout"
+        android:id="@+id/caid"
+        android:title="Cardiology" />
+    <item
+        android:id="@+id/anId"
+        android:title="Anesthetics" />
+    <item
+        android:id="@+id/gaId"
+        android:title="Gastroenterology" />
+    <item
         android:id="@+id/logoutId"
-        app:showAsAction="never">
-    </item>
+        android:title="Logout"
+        app:showAsAction="never"></item>
 
 </menu>

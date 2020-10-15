@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class HomeActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private ImageView neImage,caImage,anImage,gaImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,45 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         mAuth = FirebaseAuth.getInstance();
+
+        neImage = findViewById(R.id.neImage);
+        caImage = findViewById(R.id.caImage);
+        anImage = findViewById(R.id.anImage);
+        gaImage = findViewById(R.id.gaImage);
+
+        neImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,neurologyActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        caImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,cardiologyActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        anImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,anestheticsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        gaImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,gastroenterologyActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
@@ -53,10 +95,22 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId() == R.id.settingId){
+        if(item.getItemId() == R.id.neId){
+            Intent intent = new Intent(HomeActivity.this,neurologyActivity.class);
+            startActivity(intent);
+        }
 
-
-
+        if(item.getItemId() == R.id.caid){
+            Intent intent = new Intent(HomeActivity.this,cardiologyActivity.class);
+            startActivity(intent);
+        }
+        if(item.getItemId() == R.id.anId){
+            Intent intent = new Intent(HomeActivity.this,anestheticsActivity.class);
+            startActivity(intent);
+        }
+        if(item.getItemId() == R.id.gaId){
+            Intent intent = new Intent(HomeActivity.this,gastroenterologyActivity.class);
+            startActivity(intent);
         }
 
         if(item.getItemId()==R.id.logoutId){

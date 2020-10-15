@@ -51,13 +51,14 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/neImage"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
                             android:scaleType="centerCrop"
-                            app:srcCompat="@drawable/docor" />
+                            app:srcCompat="@drawable/docor"
+                            android:clickable="true"/>
 
                         <TextView
                             android:id="@+id/textView3"
@@ -84,12 +85,13 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView3"
+                            android:id="@+id/caImage"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor" />
+                            app:srcCompat="@drawable/docor"
+                            android:clickable="true"/>
 
                         <TextView
                             android:id="@+id/textView4"
@@ -125,12 +127,13 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/anImage"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor" />
+                            app:srcCompat="@drawable/docor"
+                            android:clickable="true"/>
 
                         <TextView
                             android:id="@+id/textView5"
@@ -157,12 +160,13 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView5"
+                            android:id="@+id/gaImage"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="5dp"
-                            app:srcCompat="@drawable/docor" />
+                            app:srcCompat="@drawable/docor"
+                            android:clickable="true"/>
 
                         <TextView
                             android:id="@+id/textView6"
